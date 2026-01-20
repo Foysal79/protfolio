@@ -343,8 +343,6 @@ const Navbar = () => {
     transform: scaleX(1);
   }
 `}</style>
-
-
     </motion.div>
   );
 };

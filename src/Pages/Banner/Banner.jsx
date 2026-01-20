@@ -945,8 +945,6 @@
 
 // export default Banner;
 
-
-
 // * modern circle fourth version (mobile: image first + center align) *//
 import { useEffect, useRef } from "react";
 import { useTypewriter } from "react-simple-typewriter";
@@ -1112,7 +1110,7 @@ const Banner = () => {
 
               <h1 className="r text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.02]">
                 I build{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   modern products
                 </span>
                 <br />
@@ -1121,7 +1119,7 @@ const Banner = () => {
 
               <p className="r text-white/70 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed">
                 I’m{" "}
-                <span className="text-white font-semibold">
+                <span className=" font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   Foysal Nur Onthor Shikder
                 </span>{" "}
                 — a full-stack developer focused on fast UI, secure

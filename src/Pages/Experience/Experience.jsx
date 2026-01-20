@@ -30,7 +30,7 @@ const Experience = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // vertical line grow
+      // vertical line grow (mobile uses left line, desktop uses center)
       gsap.fromTo(
         lineRef.current,
         { scaleY: 0 },
@@ -44,24 +44,25 @@ const Experience = () => {
             end: "bottom 80%",
             scrub: true,
           },
-        },
+        }
       );
 
       // items
       gsap.fromTo(
         "[data-exp]",
-        { opacity: 0, y: 24 },
+        { opacity: 0, y: 22, filter: "blur(8px)" },
         {
           opacity: 1,
           y: 0,
+          filter: "blur(0px)",
           duration: 0.7,
           ease: "power3.out",
-          stagger: 0.2,
+          stagger: 0.16,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 75%",
           },
-        },
+        }
       );
     }, sectionRef);
 
@@ -72,85 +73,130 @@ const Experience = () => {
     <section
       id="professional-experience"
       ref={sectionRef}
-      className="relative  bg-[#050612] text-white"
+      className="relative overflow-hidden bg-[#050612] text-white py-20 sm:py-24"
     >
-      {/* Glow */}
-      <div className="pointer-events-none   absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-purple-500/15 blur-[160px]" />
+      {/* Ambient background */}
+      <div className="pointer-events-none absolute -top-44 -left-44 h-[560px] w-[560px] rounded-full bg-purple-500/10 blur-[190px]" />
+      <div className="pointer-events-none absolute top-20 -right-44 h-[560px] w-[560px] rounded-full bg-cyan-400/8 blur-[190px]" />
+      <div className="pointer-events-none absolute bottom-[-380px] left-1/2 -translate-x-1/2 h-[980px] w-[980px] rounded-full bg-fuchsia-500/7 blur-[240px]" />
 
-      <div className="relative pt-24 max-w-6xl mx-auto px-4">
+      <div className="relative max-w-6xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-white/60 mb-2">Career</p>
-          <h2 className="text-3xl md:text-5xl font-semibold">
-            Professional Experience
+        <div className="text-center mb-10 sm:mb-14">
+          <p className="text-white/55 tracking-[0.26em] uppercase text-xs">
+            Experience
+          </p>
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-5xl font-semibold">
+            Professional Journey
           </h2>
-          <div className="mx-auto mt-5 h-px w-40 bg-white/10" />
+          <p className="mt-4 text-white/60 max-w-2xl mx-auto text-sm sm:text-base">
+            Real production work with MERN stack—APIs, authentication, and
+            scalable systems.
+          </p>
+          <div className="mx-auto mt-6 h-px w-44 bg-white/10" />
         </div>
 
-        {/* Timeline */}
+        {/* Timeline (MOBILE PERFECT) */}
         <div className="relative">
-          {/* Line */}
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-white/10" />
+          {/* line:
+              - mobile: left aligned (start at x=18px)
+              - desktop: center aligned (left-1/2)
+          */}
+          <div className="absolute left-[18px] sm:left-1/2 top-0 bottom-0 w-px bg-white/10" />
           <div
             ref={lineRef}
-            className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-purple-400 to-cyan-400"
+            className="absolute left-[18px] sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-purple-400/90 to-cyan-400/80"
           />
 
-          {/* Items */}
-          <div className="space-y-16">
+          <div className="space-y-10 sm:space-y-14">
             {experiences.map((exp, i) => (
               <div
                 key={i}
                 data-exp
-                className="relative grid sm:grid-cols-2 gap-8"
+                className="
+                  relative
+                  grid sm:grid-cols-2
+                  gap-6 sm:gap-10
+                "
               >
-                {/* Left: date */}
-                <div className="sm:text-right pr-0 sm:pr-10">
+                {/* DOT:
+                    - mobile: sits on left line
+                    - desktop: sits on center line
+                */}
+                <span className="absolute left-[18px] sm:left-1/2 top-2 -translate-x-1/2 h-3.5 w-3.5 rounded-full bg-[#050612] border border-white/15">
+                  <span className="absolute inset-0.5 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400" />
+                </span>
+
+                {/* LEFT:
+                    - mobile: becomes inline header row (not right aligned)
+                    - desktop: right aligned like before
+                */}
+                <div className="sm:text-right sm:pr-10 pl-10 sm:pl-0">
                   <p className="text-sm text-white/50">{exp.duration}</p>
-                  <div className="mt-2 hidden sm:block h-px w-24 bg-white/10 ml-auto" />
+
+                  <div className="mt-2 inline-flex sm:ml-auto items-center gap-2 text-sm text-white/80">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400/70" />
+                    <span className="font-medium">{exp.company}</span>
+                  </div>
+
+                  <p className="mt-1 text-xs text-white/50">{exp.type}</p>
+
+                  <div className="mt-4 hidden sm:block h-px w-24 bg-white/10 ml-auto" />
                 </div>
 
-                {/* Dot */}
-                <span className="absolute left-4 sm:left-1/2 top-1.5 -translate-x-1/2 h-3 w-3 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400" />
+                {/* RIGHT:
+                    - mobile: full width below left block, aligned with padding left (pl-10)
+                    - desktop: normal right column padding
+                */}
+                <div className="pl-10 sm:pl-10">
+                  <h3 className="text-lg sm:text-xl font-semibold leading-tight">
+                    {exp.role}
+                  </h3>
 
-                {/* Right: content */}
-                <div className="pl-8 sm:pl-10">
-                  <h3 className="text-xl font-semibold">{exp.role}</h3>
-                  <p className="text-white/70 mb-3">
-                    {exp.company} · {exp.type}
-                  </p>
-
-                  <p className="text-white/65 leading-relaxed mb-4">
+                  <p className="mt-3 text-white/65 leading-relaxed text-sm sm:text-base">
                     {exp.summary}
                   </p>
 
-                  <ul className="space-y-2 mb-4">
+                  <ul className="mt-4 space-y-2">
                     {exp.points.map((p, idx) => (
-                      <li key={idx} className="flex gap-3 text-white/70">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white/40" />
-                        <span>{p}</span>
+                      <li
+                        key={idx}
+                        className="flex gap-3 text-white/70 text-sm"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white/40 shrink-0" />
+                        <span className="leading-relaxed">{p}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {exp.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs rounded-full border border-white/10 text-white/70"
+                        className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/[0.02]
+                                   text-white/70 hover:border-white/20 hover:text-white transition"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
+
+                  <div className="mt-6 h-px w-24 bg-white/10" />
                 </div>
               </div>
             ))}
           </div>
+
+          {/* bottom note */}
+          <div className="mt-10 sm:mt-12 h-px bg-white/10" />
+          <p className="mt-4 text-sm text-white/55 text-center sm:text-left">
+            Focused on clean APIs, secure authentication, and maintainable
+            systems.
+          </p>
         </div>
 
-        {/* Bottom glow */}
-        <div className="pointer-events-none mx-auto mt-20 h-12 w-2/3 rounded-full bg-purple-500/10 blur-3xl" />
+        {/* bottom glow */}
+        <div className="pointer-events-none mx-auto mt-12 h-10 w-2/3 rounded-full bg-purple-500/8 blur-3xl" />
       </div>
     </section>
   );
