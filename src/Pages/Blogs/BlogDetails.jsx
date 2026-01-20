@@ -8,7 +8,7 @@ export default function BlogDetails() {
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-[#050612] text-white flex items-center justify-center px-4">
+      <div className="min-h-screen  bg-[#050612] text-white flex items-center justify-center px-4">
         <div className="text-center">
           <p className="text-white/60">Blog not found</p>
           <Link className="underline" to="/blogs">
@@ -20,15 +20,12 @@ export default function BlogDetails() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050612] text-white">
+    <div className="min-h-screen py-20 bg-[#050612] text-white">
       {/* Glow */}
       <div className="pointer-events-none absolute -top-48 -left-48 h-[520px] w-[520px] rounded-full bg-purple-500/25 blur-[140px]" />
 
       <div className="relative mx-auto max-w-3xl px-4 pt-10 pb-16">
-        <Link
-          to="/blogs"
-          className="text-white/70 hover:text-white transition"
-        >
+        <Link to="/blogs" className="text-white/70 hover:text-white transition">
           ← Back to Blogs
         </Link>
 

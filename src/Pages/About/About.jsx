@@ -23,7 +23,7 @@ const imageVariant = {
 
 const About = () => {
   return (
-    <section id="about" className="py-14 md:py-20">
+    <section id="about" className="pt-20 md:py-20">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           variants={container}

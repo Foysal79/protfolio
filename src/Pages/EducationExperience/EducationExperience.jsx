@@ -20,7 +20,7 @@ const Education = () => {
           ease: "power3.out",
           stagger: 0.12,
           scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -32,7 +32,7 @@ const Education = () => {
           duration: 0.9,
           ease: "power2.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 78%" },
-        }
+        },
       );
     }, sectionRef);
 
@@ -43,13 +43,13 @@ const Education = () => {
     <section
       id="education"
       ref={sectionRef}
-      className="relative bg-[#050612] text-white font-Poppins py-16"
+      className="relative bg-[#050612] text-white font-Poppins pt-16"
     >
       {/* glow */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-purple-500/12 blur-[170px]" />
       <div className="pointer-events-none absolute top-32 -right-40 h-[520px] w-[520px] rounded-full bg-cyan-400/10 blur-[170px]" />
 
-      <div className="relative max-w-6xl mx-auto px-4">
+      <div className="relative max-w-6xl mx-auto px-4 pt-10">
         {/* Header */}
         <div data-edu className="text-center opacity-0">
           <p className="text-white/60 mb-2">My Education</p>
@@ -57,8 +57,8 @@ const Education = () => {
             Academic Background
           </h2>
           <p className="mt-4 text-white/65 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            A solid foundation in CS fundamentals—DSA, databases, software engineering,
-            and web development.
+            A solid foundation in CS fundamentals—DSA, databases, software
+            engineering, and web development.
           </p>
         </div>
 
@@ -125,7 +125,9 @@ const Education = () => {
 
           {/* Right: coursework chips */}
           <div data-edu className="opacity-0">
-            <p className="text-white/70 font-medium mb-4">Relevant Coursework</p>
+            <p className="text-white/70 font-medium mb-4">
+              Relevant Coursework
+            </p>
 
             <div className="flex flex-wrap gap-2">
               {[
@@ -150,8 +152,8 @@ const Education = () => {
 
             {/* subtle note */}
             <p className="mt-6 text-white/55 text-sm leading-relaxed">
-              I translate coursework into practical projects—building UI, APIs, auth flows,
-              and scalable data models.
+              I translate coursework into practical projects—building UI, APIs,
+              auth flows, and scalable data models.
             </p>
 
             <div className="mt-8 h-px bg-white/10" />

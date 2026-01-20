@@ -72,12 +72,12 @@ const Experience = () => {
     <section
       id="professional-experience"
       ref={sectionRef}
-      className="relative pb-10 bg-[#050612] text-white"
+      className="relative  bg-[#050612] text-white"
     >
       {/* Glow */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-purple-500/15 blur-[160px]" />
+      <div className="pointer-events-none   absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-purple-500/15 blur-[160px]" />
 
-      <div className="relative max-w-6xl mx-auto px-4">
+      <div className="relative pt-24 max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-white/60 mb-2">Career</p>

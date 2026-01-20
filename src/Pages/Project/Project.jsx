@@ -39,7 +39,7 @@ const projects = [
     title: "BookWorm — Backend API",
     type: "Backend",
     date: "2025",
-    image: "/../public/book.png",
+    image: "https://i.ibb.co.com/czCR2hf/book.png",
     bullets: [
       "Secure backend API for book recommendation & reading tracker platform.",
       "JWT-based authentication & role-based authorization.",
@@ -66,7 +66,7 @@ const projects = [
     title: "LUMIJOBS — Hiring Platform (Team Project)",
     type: "Full Stack",
     date: "2024 – 2025",
-    image: "/../public/lumijob.png",
+    image: "https://i.ibb.co.com/mF87Z5nv/lumi.png",
     bullets: [
       "Full-stack hiring platform with job posting & applications.",
       "Role-based dashboards for Admin, Recruiter & Candidate.",
@@ -156,7 +156,7 @@ const Project = () => {
       <div className="pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-purple-500/15 blur-[160px]" />
       <div className="pointer-events-none absolute top-40 -right-40 h-[520px] w-[520px] rounded-full bg-cyan-400/10 blur-[160px]" />
 
-      <div className="relative max-w-6xl mx-auto px-4">
+      <div className="relative max-w-6xl mx-auto px-4 pt-24">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

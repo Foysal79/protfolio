@@ -81,7 +81,7 @@ const ProblemSolving = () => {
     <section
       id="problem-solving"
       ref={sectionRef}
-      className="relative bg-[#050612] text-white py-16  font-Poppins"
+      className="relative bg-[#050612] text-white pt-24  font-Poppins"
     >
       {/* background glow */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-purple-500/12 blur-[160px]" />

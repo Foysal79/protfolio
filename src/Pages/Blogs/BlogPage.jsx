@@ -82,12 +82,12 @@ export default function BlogPage() {
   }, [page, totalPages]);
 
   return (
-    <div className="min-h-screen bg-[#050612] text-white">
+    <div className="min-h-screen py-20 bg-[#050612] text-white">
       {/* Glow */}
       <div className="pointer-events-none absolute -top-48 -left-48 h-[520px] w-[520px] rounded-full bg-purple-500/25 blur-[140px]" />
       <div className="pointer-events-none absolute top-24 -right-48 h-[520px] w-[520px] rounded-full bg-cyan-400/18 blur-[140px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-10">
+      <div className="relative mx-auto max-w-7xl px-4  pt-14 py-10">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}

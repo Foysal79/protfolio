@@ -55,7 +55,7 @@ const Certifications = () => {
           duration: 0.75,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -68,7 +68,7 @@ const Certifications = () => {
           ease: "power3.out",
           stagger: 0.12,
           scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -84,7 +84,7 @@ const Certifications = () => {
             end: "bottom 90%",
             scrub: true,
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -101,7 +101,7 @@ const Certifications = () => {
       <div className="pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-purple-500/14 blur-[160px]" />
       <div className="pointer-events-none absolute top-40 -right-40 h-[520px] w-[520px] rounded-full bg-cyan-400/12 blur-[160px]" />
 
-      <div className="relative max-w-5xl mx-auto px-4">
+      <div className="relative max-w-5xl mx-auto px-4 pt-24">
         {/* header */}
         <div data-cert-head className="text-center mb-14 opacity-0">
           <p className="text-white/60 mb-2">Learning & Growth</p>
