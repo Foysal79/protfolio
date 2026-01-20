@@ -1,25 +1,22 @@
 import { motion } from "framer-motion";
 
-import About from "../About/About";
 import Banner from "../Banner/Banner";
-import Contact from "../Contact/Contact";
-import EducationExperience from "../EducationExperience/EducationExperience";
-import Project from "../Project/Project";
+import About from "../About/About";
 import Skill from "../Skill/Skill";
+import Project from "../Project/Project";
+import Experience from "../Experience/Experience";
+import ProblemSolving from "../ProblemSolving/ProblemSolving"; // ✅ ADD
+import EducationExperience from "../EducationExperience/EducationExperience";
+import Contact from "../Contact/Contact";
+import Certifications from "../Certifications/Certifications";
 
 /* ===== Reusable animation variant ===== */
 const sectionVariant = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.7, ease: "easeOut" },
   },
 };
 
@@ -36,7 +33,7 @@ const Home = () => {
 
       {/* ===== Page Content ===== */}
       <div className="relative">
-        {/* Banner → no animation (hero should appear instantly) */}
+        {/* Banner (Hero → instant render) */}
         <Banner />
 
         {/* About */}
@@ -49,7 +46,7 @@ const Home = () => {
           <About />
         </motion.section>
 
-        {/* Skill */}
+        {/* Skills */}
         <motion.section
           variants={sectionVariant}
           initial="hidden"
@@ -59,8 +56,30 @@ const Home = () => {
           <Skill />
         </motion.section>
 
-        {/* Project */}
+        {/* ⭐ Professional Experience */}
         <motion.section
+          id="professional-experience"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <Experience />
+        </motion.section>
+
+        {/* ⭐ Problem Solving (Added after Experience) */}
+        <motion.section
+          id="problem-solving"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <ProblemSolving />
+        </motion.section>
+
+        {/* Projects */}
+        {/* <motion.section
           id="projects"
           variants={sectionVariant}
           initial="hidden"
@@ -68,16 +87,28 @@ const Home = () => {
           viewport={{ once: true, amount: 0.25 }}
         >
           <Project />
-        </motion.section>
+        </motion.section> */}
+        <Project />
 
-        {/* Education / Experience */}
+        {/* Education */}
         <motion.section
+          id="education"
           variants={sectionVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
         >
           <EducationExperience />
+        </motion.section>
+        {/* ⭐ Certifications & Courses */}
+        <motion.section
+          id="certifications"
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <Certifications />
         </motion.section>
 
         {/* Contact */}

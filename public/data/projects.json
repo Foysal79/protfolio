@@ -1,0 +1,150 @@
+{
+  "featured": [
+    {
+      "id": "bookworm",
+      "title": "BookWorm — Backend API",
+      "type": "Backend",
+      "date": "2025",
+      "admin": { "email": "admin@gmail.com", "password": "admin@gmail.com" },
+      "description": [
+        "Developed a secure backend API for a book recommendation and reading tracker platform with Admin and User roles.",
+        "Implemented JWT-based authentication and authorization; protected all non-auth routes.",
+        "Built modular MVC architecture with strong validation and centralized error handling.",
+        "Enabled book & genre management, user libraries, progress tracking, reviews, and tutorials."
+      ],
+      "tech": [
+        "Node.js",
+        "Express.js",
+        "TypeScript",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "bcrypt",
+        "Zod"
+      ],
+      "links": {
+        "live": "https://your-live-link.com",
+        "backend": "https://github.com/your-backend-repo"
+      }
+    },
+    {
+      "id": "lumijobs",
+      "title": "LUMIJOBS — Team Project",
+      "type": "Full Stack",
+      "date": "2024-2025",
+      "description": [
+        "Developed a full-stack hiring platform for job posting, applications, and interview scheduling.",
+        "Implemented role-based dashboards for Admins, Recruiters, and Candidates.",
+        "Built personalized profiles, resume management, and secure authentication flows."
+      ],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Axios",
+        "TanStack Query",
+        "DND",
+        "Stripe",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "links": {
+        "live": "https://your-live-link.com",
+        "frontend": "https://github.com/your-frontend-repo",
+        "backend": "https://github.com/your-backend-repo"
+      }
+    }
+  ],
+
+  "others": [
+    {
+      "id": "ontrip",
+      "title": "OnTrip (Travel Guide Website)",
+      "type": "Full Stack",
+      "date": "11/2023 - 12/2023",
+      "admin": { "email": "admin@gmail.com", "password": "admin@gmail.com" },
+      "description": [
+        "Select your ideal tour package and choose your guide for a personalized travel experience.",
+        "Tourists can review guides and share travel stories on the platform.",
+        "3 roles: Admin, Guide, Tourist."
+      ],
+      "tech": [
+        "React",
+        "Tailwind",
+        "Firebase",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "images": [
+        "/projects/ontrip/p1.png",
+        "/projects/ontrip/p2.png",
+        "/projects/ontrip/p3.png"
+      ],
+      "links": {
+        "live": "https://ontrip-d851d.web.app",
+        "frontend": "https://github.com/Foysal79/OnTrip-Client-side-ReactJs",
+        "backend": "https://github.com/Foysal79/OnTrip-Server-side-nodeJs"
+      }
+    },
+    {
+      "id": "goexplor",
+      "title": "GoExplor (Agency-based Travel Website)",
+      "type": "Full Stack",
+      "date": "10/2023 - 11/2023",
+      "description": [
+        "Agency-based travel system: agencies add packages, tourists can book.",
+        "Login & registration using Firebase authentication.",
+        "Users can add, update, and delete their own travel services/packages."
+      ],
+      "tech": [
+        "React",
+        "Tailwind",
+        "Firebase",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "images": [
+        "/projects/goexplor/p1.png",
+        "/projects/goexplor/p2.png",
+        "/projects/goexplor/p3.png"
+      ],
+      "links": {
+        "live": "https://goexplor-e8ca8.web.app/",
+        "frontend": "https://github.com/Foysal79/GoExplor-client-side-reacrJs",
+        "backend": "https://github.com/Foysal79/GoExplor-server-side-nodeJs"
+      }
+    },
+    {
+      "id": "brandshop",
+      "title": "Brand-Shop (Online Shopping Website)",
+      "type": "Full Stack",
+      "date": "09/2023 - 10/2023",
+      "description": [
+        "Customers can buy premium fashion/apparel from luxury brands.",
+        "Product categories and updates are managed with a clean UI experience.",
+        "Purchased products are shown inside the “My Cart” section."
+      ],
+      "tech": [
+        "React",
+        "Tailwind",
+        "Firebase",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "images": [
+        "/projects/brandshop/p1.png",
+        "/projects/brandshop/p2.png",
+        "/projects/brandshop/p3.png"
+      ],
+      "links": {
+        "live": "https://leafy-lokum-545b2b.netlify.app/",
+        "frontend": "https://github.com/Foysal79/High-Hstyle-client-side-react",
+        "backend": "https://github.com/Foysal79/High-Hstyle-server-side-react"
+      }
+    }
+  ]
+}

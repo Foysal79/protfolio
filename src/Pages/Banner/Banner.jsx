@@ -72,7 +72,8 @@ const Banner = () => {
               {/* ===== CTA BUTTONS ===== */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1GDsDoTAGsVT0cQV-80qmqfD_mSZqf-8x"
+                  href="https://drive.google.com/file/d/1W8KVVTGKv72R6PmyQodb5cSJa2l9v3j1/view?usp=sharing"
+                  target="blank"
                   download
                   className="inline-flex justify-center"
                 >

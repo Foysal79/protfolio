@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 import { motion } from "framer-motion";
@@ -14,11 +15,14 @@ const navVariant = {
 
 const Navbar = () => {
   const [moreOpen, setMoreOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  // ✅ Blogs is route, others are anchors
   const mainLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skill" },
+    { name: "Blogs", href: "/blogs" }, // ✅ route
     { name: "Projects", href: "#projects" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
@@ -31,6 +35,74 @@ const Navbar = () => {
     { name: "Certifications", href: "#certifications" },
     { name: "Achievements", href: "#achievements" },
   ];
+
+  // ✅ Anchor on home, but from /blogs -> first go home then scroll
+  const handleAnchorFromOtherPage = (hash) => {
+    if (location.pathname !== "/") {
+      navigate(`/${hash}`);
+      return;
+    }
+    // if already home, AnchorLink will do smooth scroll
+  };
+
+  const NavItem = ({ item, className = "navlink" }) => {
+    const isHash = item.href.startsWith("#");
+    if (isHash) {
+      // If not on home, use Link to go to "/#section"
+      if (location.pathname !== "/") {
+        return (
+          <button
+            type="button"
+            onClick={() => handleAnchorFromOtherPage(item.href)}
+            className={`${className} text-left w-full`}
+          >
+            {item.name}
+          </button>
+        );
+      }
+      // On home, smooth scroll
+      return (
+        <AnchorLink href={item.href} className={className}>
+          {item.name}
+        </AnchorLink>
+      );
+    }
+
+    // route link (/blogs)
+    return (
+      <Link to={item.href} className={className}>
+        {item.name}
+      </Link>
+    );
+  };
+
+  const HireMeButton = () => {
+    // If not on home, go to /#contact
+    if (location.pathname !== "/") {
+      return (
+        <button
+          type="button"
+          onClick={() => navigate("/#contact")}
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80 hover:from-purple-500 hover:to-fuchsia-500 transition border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.45)] flex items-center gap-2"
+        >
+          Hire Me <TfiAngleDoubleRight />
+        </button>
+      );
+    }
+
+    // On home, smooth scroll
+    return (
+      <AnchorLink href="#contact">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80 hover:from-purple-500 hover:to-fuchsia-500 transition border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.45)] flex items-center gap-2"
+        >
+          Hire Me <TfiAngleDoubleRight />
+        </motion.button>
+      </AnchorLink>
+    );
+  };
 
   return (
     <motion.div
@@ -78,9 +150,7 @@ const Navbar = () => {
                 {/* Main links */}
                 {mainLinks.map((item) => (
                   <li key={item.name}>
-                    <AnchorLink href={item.href} className="navlink block">
-                      {item.name}
-                    </AnchorLink>
+                    <NavItem item={item} className="navlink block" />
                   </li>
                 ))}
 
@@ -107,12 +177,25 @@ const Navbar = () => {
                     <ul className="mt-1 ml-2 pl-2 border-l border-white/10 space-y-1">
                       {moreLinks.map((item) => (
                         <li key={item.name}>
-                          <AnchorLink
-                            href={item.href}
-                            className="navlink block"
-                          >
-                            {item.name}
-                          </AnchorLink>
+                          {/* More links are anchors */}
+                          {location.pathname !== "/" ? (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                handleAnchorFromOtherPage(item.href)
+                              }
+                              className="navlink block text-left w-full"
+                            >
+                              {item.name}
+                            </button>
+                          ) : (
+                            <AnchorLink
+                              href={item.href}
+                              className="navlink block"
+                            >
+                              {item.name}
+                            </AnchorLink>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -122,11 +205,14 @@ const Navbar = () => {
             </div>
 
             {/* Logo */}
-            <a className="btn btn-ghost text-xl lg:text-2xl font-bold tracking-tight">
+            <Link
+              to="/"
+              className="btn btn-ghost text-xl lg:text-2xl font-bold tracking-tight"
+            >
               <span className="bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80 bg-clip-text text-transparent">
                 Foysal
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* CENTER (Desktop) */}
@@ -134,9 +220,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal gap-1">
               {mainLinks.map((item) => (
                 <li key={item.name}>
-                  <AnchorLink href={item.href} className="navlink">
-                    {item.name}
-                  </AnchorLink>
+                  <NavItem item={item} className="navlink" />
                 </li>
               ))}
 
@@ -153,9 +237,19 @@ const Navbar = () => {
                 >
                   {moreLinks.map((item) => (
                     <li key={item.name}>
-                      <AnchorLink href={item.href} className="navlink block">
-                        {item.name}
-                      </AnchorLink>
+                      {location.pathname !== "/" ? (
+                        <button
+                          type="button"
+                          onClick={() => handleAnchorFromOtherPage(item.href)}
+                          className="navlink block text-left w-full"
+                        >
+                          {item.name}
+                        </button>
+                      ) : (
+                        <AnchorLink href={item.href} className="navlink block">
+                          {item.name}
+                        </AnchorLink>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -165,53 +259,92 @@ const Navbar = () => {
 
           {/* RIGHT */}
           <div className="navbar-end">
-            <AnchorLink href="#contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80 hover:from-purple-500 hover:to-fuchsia-500 transition border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.45)] flex items-center gap-2"
-              >
-                Hire Me <TfiAngleDoubleRight />
-              </motion.button>
-            </AnchorLink>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <HireMeButton />
+            </motion.div>
           </div>
         </div>
       </div>
 
       <style>{`
-        .navlink {
-          color: rgba(255,255,255,0.75);
-          padding: 10px 12px;
-          border-radius: 12px;
-          transition: all .2s ease;
-          position: relative;
-          white-space: nowrap;
-        }
-        .navlink:hover {
-          color: white;
-          background: rgba(255,255,255,0.06);
-        }
-        .navlink::after {
-          content: "";
-          position: absolute;
-          left: 12px;
-          right: 12px;
-          bottom: 6px;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            rgba(168,85,247,0),
-            rgba(168,85,247,.8),
-            rgba(34,211,238,.8),
-            rgba(34,211,238,0)
-          );
-          transform: scaleX(0);
-          transition: transform .25s ease;
-        }
-        .navlink:hover::after {
-          transform: scaleX(1);
-        }
-      `}</style>
+  /* 1) Navbar fixed + glossy */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 1000;
+
+    /* 👉 দুই পাশে padding */
+    padding: 0 24px;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(10,10,20,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Responsive spacing (optional but clean) */
+  @media (min-width: 768px) {
+    .navbar {
+      padding: 0 40px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .navbar {
+      padding: 0 64px;
+    }
+  }
+
+  /* 2) Body/hero offset */
+  .pageOffset {
+    padding-top: 72px;
+  }
+
+  .hero {
+    padding-top: 72px;
+  }
+
+  /* nav links */
+  .navlink {
+    color: rgba(255,255,255,0.75);
+    padding: 10px 12px;
+    border-radius: 12px;
+    transition: all .2s ease;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .navlink:hover {
+    color: white;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .navlink::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(168,85,247,0),
+      rgba(168,85,247,.8),
+      rgba(34,211,238,.8),
+      rgba(34,211,238,0)
+    );
+    transform: scaleX(0);
+    transition: transform .25s ease;
+  }
+
+  .navlink:hover::after {
+    transform: scaleX(1);
+  }
+`}</style>
+
+
     </motion.div>
   );
 };
