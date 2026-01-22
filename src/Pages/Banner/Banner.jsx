@@ -1155,7 +1155,7 @@ const Banner = () => {
               {/* CTA */}
               <div className="r flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <a
-                  href="https://drive.google.com/file/d/1W8KVVTGKv72R6PmyQodb5cSJa2l9v3j1/view"
+                  href="https://drive.google.com/file/d/1PvtK9QrSzGGUsuPAbTiaTQvFO8h_AWPD/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex"

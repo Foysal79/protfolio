@@ -1,128 +1,129 @@
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 import Banner from "../Banner/Banner";
 import About from "../About/About";
 import Skill from "../Skill/Skill";
 import Project from "../Project/Project";
 import Experience from "../Experience/Experience";
-import ProblemSolving from "../ProblemSolving/ProblemSolving"; // ✅ ADD
+import ProblemSolving from "../ProblemSolving/ProblemSolving";
 import EducationExperience from "../EducationExperience/EducationExperience";
 import Contact from "../Contact/Contact";
 import Certifications from "../Certifications/Certifications";
 
-/* ===== Reusable animation variant ===== */
+/* lighter + smoother */
 const sectionVariant = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.55, ease: "easeOut" },
   },
+};
+
+const view = {
+  once: true,
+  amount: 0.2,
+  // ✅ start animating a bit before it enters viewport -> less “pop”
+  margin: "0px 0px -120px 0px",
 };
 
 const Home = () => {
   return (
-    <div
-      id="home"
-      className="relative min-h-screen overflow-hidden bg-[#050612] text-white"
-    >
-      {/* ===== Global Background Glow ===== */}
-      <div className="pointer-events-none absolute -top-48 -left-48 h-[520px] w-[520px] rounded-full bg-purple-500/25 blur-[140px]" />
-      <div className="pointer-events-none absolute top-24 -right-48 h-[520px] w-[520px] rounded-full bg-cyan-400/18 blur-[140px]" />
-      <div className="pointer-events-none absolute bottom-[-360px] left-1/2 -translate-x-1/2 h-[900px] w-[900px] rounded-full bg-fuchsia-500/12 blur-[180px]" />
+    <LazyMotion features={domAnimation}>
+      <div
+        id="home"
+        className="relative min-h-screen overflow-hidden bg-[#050612] text-white"
+      >
+        {/* ===== Global Background Glow (lighter for FPS) ===== */}
+        <div className="pointer-events-none absolute -top-48 -left-48 h-[520px] w-[520px] rounded-full bg-purple-500/18 blur-[110px] will-change-transform" />
+        <div className="pointer-events-none absolute top-24 -right-48 h-[520px] w-[520px] rounded-full bg-cyan-400/12 blur-[110px] will-change-transform" />
+        <div className="pointer-events-none absolute bottom-[-360px] left-1/2 -translate-x-1/2 h-[900px] w-[900px] rounded-full bg-fuchsia-500/8 blur-[140px] will-change-transform" />
 
-      {/* ===== Page Content ===== */}
-      <div className="relative">
-        {/* Banner (Hero → instant render) */}
-        <Banner />
+        {/* ===== Page Content ===== */}
+        <div className="relative">
+          {/* Hero should be instant */}
+          <Banner />
 
-        {/* About */}
-        <motion.section
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <About />
-        </motion.section>
+          <m.section
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <About />
+          </m.section>
 
-        {/* Skills */}
-        <motion.section
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <Skill />
-        </motion.section>
+          <m.section
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <Skill />
+          </m.section>
 
-        {/* ⭐ Professional Experience */}
-        <motion.section
-          id="professional-experience"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <Experience />
-        </motion.section>
+          <m.section
+            id="professional-experience"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <Experience />
+          </m.section>
 
-        {/* ⭐ Problem Solving (Added after Experience) */}
-        <motion.section
-          id="problem-solving"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <ProblemSolving />
-        </motion.section>
+          <m.section
+            id="problem-solving"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <ProblemSolving />
+          </m.section>
 
-        {/* Projects */}
-        {/* <motion.section
-          id="projects"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <Project />
-        </motion.section> */}
-        <Project />
+          <m.section
+            id="projects"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <Project />
+          </m.section>
 
-        {/* Education */}
-        <motion.section
-          id="education"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <EducationExperience />
-        </motion.section>
-        {/* ⭐ Certifications & Courses */}
-        <motion.section
-          id="certifications"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <Certifications />
-        </motion.section>
+          <m.section
+            id="education"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <EducationExperience />
+          </m.section>
 
-        {/* Contact */}
-        <motion.section
-          id="contact"
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-        >
-          <Contact />
-        </motion.section>
+          <m.section
+            id="certifications"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <Certifications />
+          </m.section>
+
+          <m.section
+            id="contact"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={view}
+          >
+            <Contact />
+          </m.section>
+        </div>
       </div>
-    </div>
+    </LazyMotion>
   );
 };
 

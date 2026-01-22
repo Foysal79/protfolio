@@ -19,7 +19,10 @@ const fadeUp = {
 
 const About = () => {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#050612] text-white py-24">
+    <section
+      id="about"
+      className="relative overflow-hidden bg-[#050612] text-white py-24"
+    >
       {/* ===== ambient background (same theme, nicer) ===== */}
       <div className="pointer-events-none absolute -top-48 -left-48 h-[620px] w-[620px] rounded-full bg-purple-500/12 blur-[190px]" />
       <div className="pointer-events-none absolute top-16 -right-48 h-[620px] w-[620px] rounded-full bg-cyan-400/10 blur-[190px]" />
@@ -32,7 +35,8 @@ const About = () => {
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
           backgroundSize: "56px 56px",
-          maskImage: "radial-gradient(circle at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 72%)",
+          maskImage:
+            "radial-gradient(circle at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 72%)",
           WebkitMaskImage:
             "radial-gradient(circle at 50% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 72%)",
         }}
@@ -47,8 +51,13 @@ const About = () => {
           className="relative"
         >
           {/* ===== Section header ===== */}
-          <motion.div variants={fadeUp} className="text-center max-w-3xl mx-auto">
-            <p className="text-white/55 tracking-[0.28em] uppercase text-xs">ABOUT</p>
+          <motion.div
+            variants={fadeUp}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <p className="text-white/55 tracking-[0.28em] uppercase text-xs">
+              ABOUT
+            </p>
             <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
               Building{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-300">
@@ -57,8 +66,8 @@ const About = () => {
               end-to-end
             </h2>
             <p className="mt-4 text-white/65 leading-relaxed text-sm sm:text-base">
-              Clean UI, secure authentication, scalable APIs, and maintainable code that teams can
-              confidently ship.
+              Clean UI, secure authentication, scalable APIs, and maintainable
+              code that teams can confidently ship.
             </p>
           </motion.div>
 
@@ -77,11 +86,17 @@ const About = () => {
                     <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
                       <div className="flex items-center gap-3">
                         <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                          <span className="text-sm font-semibold text-white/80">FS</span>
+                          <span className="text-sm font-semibold text-white/80">
+                            FS
+                          </span>
                         </div>
                         <div>
-                          <p className="text-sm font-semibold leading-none">Foysal Nur Onthor</p>
-                          <p className="text-xs text-white/55 mt-1">Full Stack Developer (MERN)</p>
+                          <p className="text-sm font-semibold leading-none">
+                            Foysal Nur Onthor
+                          </p>
+                          <p className="text-xs text-white/55 mt-1">
+                            Full Stack Developer (MERN)
+                          </p>
                         </div>
                       </div>
 
@@ -107,7 +122,9 @@ const About = () => {
                         {/* bottom overlay */}
                         <div className="absolute inset-x-0 bottom-0 p-4">
                           <div className="rounded-2xl bg-black/45 border border-white/10 backdrop-blur px-4 py-3">
-                            <p className="text-sm font-semibold">Clean UI • Secure Auth • APIs</p>
+                            <p className="text-sm font-semibold">
+                              Clean UI • Secure Auth • APIs
+                            </p>
                             <p className="text-xs text-white/60 mt-1">
                               React / Next.js • Node / Express • MongoDB
                             </p>
@@ -122,7 +139,10 @@ const About = () => {
                           { k: "Backend", v: "Node" },
                           { k: "Auth", v: "JWT" },
                         ].map((x) => (
-                          <div key={x.k} className="rounded-2xl border border-white/10 bg-white/5 py-3">
+                          <div
+                            key={x.k}
+                            className="rounded-2xl border border-white/10 bg-white/5 py-3"
+                          >
                             <p className="text-[11px] text-white/55">{x.k}</p>
                             <p className="text-sm font-semibold">{x.v}</p>
                           </div>
@@ -134,7 +154,8 @@ const About = () => {
 
                 {/* small note */}
                 <p className="mt-4 text-center lg:text-left text-xs text-white/50">
-                  I focus on maintainable code, clear communication, and predictable delivery.
+                  I focus on maintainable code, clear communication, and
+                  predictable delivery.
                 </p>
               </div>
             </motion.div>
@@ -142,26 +163,51 @@ const About = () => {
             {/* ===== RIGHT: story + proof ===== */}
             <div className="lg:col-span-7 order-2 space-y-7">
               {/* story */}
-              <motion.div variants={fadeUp} className="text-center lg:text-left">
+              <motion.div
+                variants={fadeUp}
+                className="text-center lg:text-left"
+              >
                 <h3 className="text-xl sm:text-2xl font-semibold">What I do</h3>
                 <p className="mt-3 text-white/70 leading-relaxed text-sm sm:text-base">
                   I build production-ready web applications using{" "}
-                  <span className="text-white/90 font-medium">React / Next.js</span> and{" "}
-                  <span className="text-white/90 font-medium">Node.js / Express</span>. My work
-                  includes structured REST APIs, secure authentication, and strong database design.
-                  I’m comfortable with{" "}
-                  <span className="text-white/90 font-medium">SQL</span> (PostgreSQL, MySQL) and{" "}
-                  <span className="text-white/90 font-medium">NoSQL</span> (MongoDB).
+                  <span className="text-white/90 font-medium">
+                    React / Next.js
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-white/90 font-medium">
+                    Node.js / Express
+                  </span>
+                  . My work includes structured REST APIs, secure
+                  authentication, and strong database design. I’m comfortable
+                  with <span className="text-white/90 font-medium">SQL</span>{" "}
+                  (PostgreSQL, MySQL) and{" "}
+                  <span className="text-white/90 font-medium">NoSQL</span>{" "}
+                  (MongoDB).
                 </p>
               </motion.div>
 
               {/* highlights (premium list blocks) */}
-              <motion.div variants={fadeUp} className="grid sm:grid-cols-2 gap-3">
+              <motion.div
+                variants={fadeUp}
+                className="grid sm:grid-cols-2 gap-3"
+              >
                 {[
-                  { c: "text-purple-300", t: "Frontend (React, Next.js, Tailwind)" },
-                  { c: "text-purple-300", t: "Backend (Node.js, Express, REST APIs)" },
-                  { c: "text-cyan-300", t: "Authentication (JWT, Role-based access)" },
-                  { c: "text-cyan-300", t: "Databases (PostgreSQL, MySQL, MongoDB)" },
+                  {
+                    c: "text-purple-300",
+                    t: "Frontend (React, Next.js, Tailwind)",
+                  },
+                  {
+                    c: "text-purple-300",
+                    t: "Backend (Node.js, Express, REST APIs)",
+                  },
+                  {
+                    c: "text-cyan-300",
+                    t: "Authentication (JWT, Role-based access)",
+                  },
+                  {
+                    c: "text-cyan-300",
+                    t: "Databases (PostgreSQL, MySQL, MongoDB)",
+                  },
                 ].map((x) => (
                   <div
                     key={x.t}
@@ -175,7 +221,10 @@ const About = () => {
               </motion.div>
 
               {/* tech chips */}
-              <motion.div variants={fadeUp} className="flex flex-wrap gap-2 justify-center lg:justify-start">
+              <motion.div
+                variants={fadeUp}
+                className="flex flex-wrap gap-2 justify-center lg:justify-start"
+              >
                 {[
                   "React",
                   "Next.js",
@@ -206,7 +255,7 @@ const About = () => {
                 className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-1"
               >
                 <a
-                  href="https://drive.google.com/file/d/1W8KVVTGKv72R6PmyQodb5cSJa2l9v3j1/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1PvtK9QrSzGGUsuPAbTiaTQvFO8h_AWPD/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex"
