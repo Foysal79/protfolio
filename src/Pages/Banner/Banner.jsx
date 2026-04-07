@@ -1124,7 +1124,7 @@ const Banner = () => {
                 <span className=" font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   Foysal Nur Onthor Shikder
                 </span>{" "} — a full-stack AI developer who knows what happens when products are built without structure, speed, or scale in mind.
-
+                   <br />  
                <p> I’ve seen how slow UI, weak authentication, messy APIs, and poor architecture turn promising ideas into costly problems. That’s why I build modern web products with fast interfaces, secure systems, scalable backend architecture, and clean code that is ready to grow with the business.</p>
               </p>
 
