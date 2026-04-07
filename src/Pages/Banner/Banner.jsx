@@ -1114,7 +1114,7 @@ const Banner = () => {
                   modern products
                 </span>
                 <br />
-                for the web. 
+                for the web Applications. 
                 <br />  
                 <h3>Hope You Don’t Hire</h3>
               </h1>
