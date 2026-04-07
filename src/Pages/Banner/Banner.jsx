@@ -1114,16 +1114,18 @@ const Banner = () => {
                   modern products
                 </span>
                 <br />
-                for the web.
+                for the web. 
+                <br />  
+                Hope You Don’t Hire
               </h1>
 
               <p className="r text-white/70 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed">
                 I’m{" "}
                 <span className=" font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   Foysal Nur Onthor Shikder
-                </span>{" "}
-                — a full-stack developer focused on fast UI, secure
-                authentication, scalable APIs, and clean architecture.
+                </span>{" "} — a full-stack AI developer who knows what happens when products are built without structure, speed, or scale in mind.
+
+               <p> I’ve seen how slow UI, weak authentication, messy APIs, and poor architecture turn promising ideas into costly problems. That’s why I build modern web products with fast interfaces, secure systems, scalable backend architecture, and clean code that is ready to grow with the business.</p>
               </p>
 
               {/* typing row */}
