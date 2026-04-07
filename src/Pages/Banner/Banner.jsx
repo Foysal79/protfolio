@@ -1108,7 +1108,7 @@ const Banner = () => {
                 </span>
               </div>
 
-              <h1 className="r text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.02]">
+              <h1 className="r text-3xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold leading-[1.02]">
                 I build{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   modern products
@@ -1116,10 +1116,10 @@ const Banner = () => {
                 <br />
                 for the web. 
                 <br />  
-                Hope You Don’t Hire
+                <h3>Hope You Don’t Hire</h3>
               </h1>
 
-              <p className="r text-white/70 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed">
+              <p className="r text-white/70 max-w-xl mx-auto lg:mx-0 text-sm  leading-relaxed">
                 I’m{" "}
                 <span className=" font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   Foysal Nur Onthor Shikder
