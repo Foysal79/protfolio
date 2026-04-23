@@ -6,21 +6,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ===== Data ===== */
 const experiences = [
-  {
-    company: "TechFynite",
-    type: "Internship & Contract · Remote",
-    role: "MERN Stack Developer",
-    duration: "Feb 2025 – Jul 2025",
-    summary:
-      "Worked in a production MERN environment focusing on backend APIs, authentication, and scalable system design.",
-    points: [
-      "Built RESTful APIs using Node.js & Express",
-      "Implemented JWT authentication & role-based access",
-      "Designed MongoDB schemas and optimized queries",
-      "Collaborated with frontend & product teams",
-    ],
-    stack: ["Node.js", "Express", "MongoDB", "JWT", "React", "Next.js"],
-  },
+{
+  company: "TechFynite",
+  type: "Full-time",
+  role: "Full-Stack Developer",
+  duration: "Jul 2025 - Jan 2026",
+  summary:
+    "Worked on production-level full-stack applications, contributing to real-world features across frontend and backend systems. Focused on API development, authentication, database design, and scalable product delivery in a live development environment.",
+  points: [
+    "Worked on live full-stack products using Next.js, React.js, Node.js, and Express.js, contributing to real-world features used in production.",
+    "Built frontend modules, connected them with backend APIs, and helped deliver complete product functionality across the stack.",
+    "Developed and integrated RESTful APIs to support core business logic and seamless frontend-backend communication.",
+    "Implemented JWT authentication and role-based authorization to secure application workflows and user access.",
+    "Collaborated on backend structure, including API design, authentication flow, and database schema planning.",
+    "Contributed to feature delivery, bug resolution, and performance improvements in a fast-paced product development environment."
+  ],
+  stack: [
+    "Next.js",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "RESTful APIs",
+    "JWT",
+    "Role-Based Access Control"
+  ]
+}
 ];
 
 /* ===== Component ===== */
