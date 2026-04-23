@@ -955,10 +955,10 @@ const Banner = () => {
 
   const [typeEffect] = useTypewriter({
     words: [
-      "Designing clean UIs",
-      "Building secure APIs",
-      "Shipping MERN products",
-      "Auth • REST • MongoDB",
+      "Crafting polished experiences",
+      "Building secure architectures",
+      "Shipping scalable products",
+      "Code • Performance • Reliability",
     ],
     loop: {},
     typeSpeed: 68,
@@ -1070,8 +1070,8 @@ const Banner = () => {
 
                       {/* label */}
                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                        <div className="px-4 py-2 rounded-full bg-black/45 border border-white/10 backdrop-blur text-xs sm:text-sm text-white/85">
-                          Full Stack • React / Next / Node
+                        <div className="px-4 py-2 rounded-full bg-black/45 border border-white/10 backdrop-blur text-center text-xs sm:text-sm text-white/85">
+                          Web Application Architect
                         </div>
                       </div>
                     </div>
@@ -1114,8 +1114,8 @@ const Banner = () => {
                   modern products
                 </span>
                 <br />
-                for the web Applications. 
-                <br />  
+                for the web Applications.
+                <br />
                 <h3>Hope You Don’t Hire</h3>
               </h1>
 
@@ -1123,8 +1123,11 @@ const Banner = () => {
                 I’m{" "}
                 <span className=" font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500/80 to-fuchsia-500/80">
                   Foysal Nur Onthor Shikder
-                </span>{" "} — a full-stack AI developer who knows what happens, I know  products are built without structure, speed, or scale in mind.
-                 <p className="mt-4"> I’ve seen how slow UI, weak authentication, messy APIs, and poor architecture turn promising ideas into costly problems. That’s why I build modern web products with fast interfaces, secure systems, scalable backend architecture, and clean code that is ready to grow with the business.</p>
+                </span>{" "}
+                a full-stack AI developer focused on building fast, secure, and
+                scalable digital products. I help turn ideas into modern web
+                applications with clean architecture, smooth user experience,
+                and systems built to grow.
               </p>
 
               {/* typing row */}
@@ -1143,6 +1146,7 @@ const Banner = () => {
                   "Express",
                   "MongoDB",
                   "JWT/Auth",
+                  "PostgreSQL",
                 ].map((t) => (
                   <span
                     key={t}

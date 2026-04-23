@@ -95,7 +95,7 @@ const About = () => {
                             Foysal Nur Onthor
                           </p>
                           <p className="text-xs text-white/55 mt-1">
-                            Full Stack Developer (MERN)
+                            Web Application Architect
                           </p>
                         </div>
                       </div>
@@ -177,12 +177,13 @@ const About = () => {
                   <span className="text-white/90 font-medium">
                     Node.js / Express
                   </span>
-                  . My work includes structured REST APIs, secure
-                  authentication, and strong database design. I’m comfortable
-                  with <span className="text-white/90 font-medium">SQL</span>{" "}
-                  (PostgreSQL, MySQL) and{" "}
+                  , with a focus on clean architecture, secure authentication,
+                  scalable APIs, and reliable database systems. I work
+                  confidently with{" "}
+                  <span className="text-white/90 font-medium">SQL</span>{" "}
+                  databases like PostgreSQL and MySQL, along with{" "}
                   <span className="text-white/90 font-medium">NoSQL</span>{" "}
-                  (MongoDB).
+                  solutions such as MongoDB.
                 </p>
               </motion.div>
 
