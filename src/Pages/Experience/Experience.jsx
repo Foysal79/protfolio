@@ -102,7 +102,7 @@ const Experience = () => {
             Professional Journey
           </h2>
           <p className="mt-4 text-white/60 max-w-2xl mx-auto text-sm sm:text-base">
-            Real production work with MERN stack—APIs, authentication, and
+            Real production work with Full-stack APIs, authentication, and
             scalable systems.
           </p>
           <div className="mx-auto mt-6 h-px w-44 bg-white/10" />
